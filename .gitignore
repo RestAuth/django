@@ -2,3 +2,7 @@
 *.pyo
 *.swp
 *.swo
+/bin/
+/include/
+/lib/
+/local/
