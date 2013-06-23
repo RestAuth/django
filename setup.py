@@ -134,8 +134,9 @@ setup(
         ('share/doc/restauth', ['AUTHORS', 'COPYING', 'COPYRIGHT', ]),
     ],
     cmdclass={
-        'clean': clean,
         'build_doc': build_doc,
+        'clean': clean,
+        'version': version,
     },
     classifiers=[
         "Development Status :: 6 - Mature",
