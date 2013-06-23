@@ -3,15 +3,31 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to DjangoRestAuth's documentation!
-==========================================
+Welcome to DjangoRestAuth!
+==========================
 
-Contents:
+Installation
+____________
 
 .. toctree::
-   :maxdepth: 2
+
+   install/source
+
+Usage
+_____
+
+.. toctree::
+   :maxdepth: 1
 
    settings
+
+Contribute
+__________
+
+.. toctree::
+   :maxdepth: 1
+
+   contrib/contribute
 
 
 Indices and tables
