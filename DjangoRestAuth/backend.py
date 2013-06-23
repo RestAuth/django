@@ -19,16 +19,14 @@ from __future__ import unicode_literals
 
 import logging
 
-from django.contrib.auth import get_user_model
-
 from RestAuthCommon.error import InternalServerError
 
 from RestAuthClient.restauth_user import User as RestAuthUser
 
 from DjangoRestAuth.connection import connection
+from DjangoRestAuth.conf import User
+from DjangoRestAuth.conf import USERNAME_FIELD
 
-User = get_user_model()
-USERNAME_FIELD = username_field = getattr(User, 'USERNAME_FIELD', 'username')
 log = logging.getLogger(__name__)
 
 
