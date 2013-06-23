@@ -17,8 +17,13 @@
 
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 
-User = get_user_model()
 
+# base user model settings
+User = get_user_model()
 USERNAME_FIELD = username_field = getattr(User, 'USERNAME_FIELD', 'username')
+
+# Some RestAuth settings
+RESTAUTH_PASSWORD_FIELD = getattr(settings, 'RESTAUTH_PASSWORD_FIELD', '')

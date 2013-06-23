@@ -6,6 +6,10 @@ Settings
 RESTAUTH_CONNECTIONS
 ____________________
 
+Default::
+
+   None
+
 Example:
 
 .. code-block:: python
@@ -19,3 +23,16 @@ Example:
            #'CONTENT_HANDLER': 'application/yaml',
        }
    }
+
+.. _settings-restauth_password_field:
+
+RESTAUTH_PASSWORD_FIELD
+_______________________
+
+Default::
+
+   ''
+
+If set to a non-empty string, DjangoRestAuth will pass passwords to the
+``create_user`` method. The name of the keyword argument will be the value
+of this setting.

@@ -23,9 +23,9 @@ from RestAuthCommon.error import InternalServerError
 
 from RestAuthClient.restauth_user import User as RestAuthUser
 
-from DjangoRestAuth.connection import connection
+from DjangoRestAuth import conf
 from DjangoRestAuth.conf import User
-from DjangoRestAuth.conf import USERNAME_FIELD
+from DjangoRestAuth.connection import connection
 
 log = logging.getLogger(__name__)
 
@@ -46,9 +46,14 @@ class RestAuthBackend(object):
 
         if verified:
             try:
-                user = User.objects.get(**{USERNAME_FIELD: username})
+                user = User.objects.get(**{conf.USERNAME_FIELD: username})
             except User.DoesNotExist:
-                user = User.objects.create_user(username, password=password)
+                kwargs = {}
+
+                if conf.RESTAUTH_PASSWORD_FIELD:
+                    kwargs[conf.RESTAUTH_PASSWORD_FIELD] = password
+
+                user = User.objects.create_user(username, **kwargs)
 
             return user
 
