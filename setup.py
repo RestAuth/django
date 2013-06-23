@@ -70,13 +70,22 @@ class clean(_clean):
 
 class build_doc(Command):
     description = "Build HTML documentation"
-    user_options = []
+    user_options = [
+        ('target=', 't', 'What distribution to build for'),
+    ]
 
     def initialize_options(self):
-        pass
+        version = get_version()
+        os.environ['SPHINXOPTS'] = '-D release=%s -D version=%s' \
+            % (version, version)
+
+        self.target = None
 
     def finalize_options(self):
-        pass
+        if self.target:
+            os.environ['SPHINXOPTS'] += ' -t %s' % self.target
+        else:
+            os.environ['SPHINXOPTS'] += ' -t source'
 
     def run(self):
         cmd = ['make', '-C', 'doc', 'html']
