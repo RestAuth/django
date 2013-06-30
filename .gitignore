@@ -12,3 +12,4 @@
 /py2
 /py3
 Makefile.local
+DjangoRestAuth.egg-info
