@@ -28,8 +28,11 @@ USERNAME_FIELD = username_field = getattr(User, 'USERNAME_FIELD', 'username')
 # Some RestAuth settings
 LOCAL_PASSWORDS = getattr(settings, 'RESTAUTH_LOCAL_PASSWORDS', False)
 
+# wether to sync groups or not
+SYNC_GROUPS = getattr(settings, 'RESTAUTH_SYNC_GROUPS', True)
+
 # map some groups to user fields:
 USER_GROUP_FIELDS = getattr(settings, 'RESTAUTH_USER_GROUP_FIELDS', {
     'staff': 'is_staff',
-    'admin': 'is_admin',
+    'superuser': 'is_superuser',
 })
