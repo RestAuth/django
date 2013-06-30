@@ -56,7 +56,7 @@ class RestAuthBackend(object):
                 user = User(**kwargs)
                 to_save = True
 
-            if conf.RESTAUTH_LOCAL_PASSWORDS:
+            if conf.LOCAL_PASSWORDS:
                 user.set_password(password)
                 to_save = True
 

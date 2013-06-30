@@ -42,10 +42,10 @@ Available keys:
    <RestAuthCommon:RestAuthCommon.handlers.ContentHandler>`.
 
 
-.. _settings-restauth_password_field:
+.. _settings-restauth_local_password:
 
-RESTAUTH_LOCAL_PASSWORD
-_______________________
+RESTAUTH_LOCAL_PASSWORDS
+________________________
 
 Default::
 

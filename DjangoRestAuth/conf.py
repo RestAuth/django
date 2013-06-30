@@ -26,10 +26,10 @@ User = get_user_model()
 USERNAME_FIELD = username_field = getattr(User, 'USERNAME_FIELD', 'username')
 
 # Some RestAuth settings
-RESTAUTH_LOCAL_PASSWORD = getattr(settings, 'RESTAUTH_LOCAL_PASSWORD', False)
+LOCAL_PASSWORDS = getattr(settings, 'RESTAUTH_LOCAL_PASSWORDS', False)
 
 # map some groups to user fields:
-RESTAUTH_USER_GROUP_FIELDS = getattr(settings, 'RESTAUTH_USER_GROUP_FIELDS', {
+USER_GROUP_FIELDS = getattr(settings, 'RESTAUTH_USER_GROUP_FIELDS', {
     'staff': 'is_staff',
     'admin': 'is_admin',
 })
