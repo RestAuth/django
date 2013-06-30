@@ -7,7 +7,7 @@ Welcome to DjangoRestAuth!
 ==========================
 
 Welcome to DjangorestAuth, a `RestAuth <https://restauth.net>`_ plugin for
-`Django <https://www.djangoproject.net>`_. DjangoRestAuth is currently rather
+`Django`_. DjangoRestAuth is currently rather
 basic and only provides an authentication backend.
 
 DjangoRestAuth is Free Software, licensed under the `GNU General Public License,

@@ -255,3 +255,14 @@ intersphinx_mapping = {
     'RestAuthClient': ('https://python.restauth.net/', None),
     'Django': ('http://docs.djangoproject.com/en/dev/', 'http://docs.djangoproject.com/en/dev/_objects/'),
 }
+
+rst_prolog = '''
+.. _RestAuth: https://restauth.net
+.. _RestAuthServer: https://server.restauth.net
+.. _Django: https://www.djangoproject.com
+.. _RestAuthCommon: https://common.restauth.net
+.. _RestAuthClient: https://python.restauth.net
+.. _Python: http://www.python.org
+'''
+
+rst_prolog += ".. |latest-release| replace:: %s\n" % os.environ.get('LATEST_RELEASE', version)
