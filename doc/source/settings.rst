@@ -83,8 +83,9 @@ A dictionary of RestAuth groups that are not stored as standard Django user
 groups but as model fields of the user instance. A field is set to ``True`` if a
 user is in the named group or ``False`` otherwise.
 
-The default means that a users ``is_staff`` field is set to ``True`` if he is a
-member of the ``staff`` RestAuth group, likewise for ``admin`` and ``is_admin``.
+The default means that a users ``is_staff`` field is set to ``True`` if she/he
+is a member of the ``staff`` RestAuth group, likewise for ``admin`` and
+``is_admin``.
 
 .. _settings-restauth_sync_groups:
 
