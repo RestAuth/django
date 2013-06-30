@@ -62,3 +62,13 @@ If you set this value to ``True``, DjangoRestAuth will set the password via
 :py:meth:`set_password
 <Django:django.contrib.auth.models.AbstractBaseUser.set_password>` whenever a
 user logs in.
+
+RESTAUTH_USER_GROUP_FIELDS
+__________________________
+
+Default::
+   {
+       'staff': 'is_staff',
+       'admin': 'is_admin',
+   }
+
