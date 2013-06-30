@@ -15,7 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with DjangoRestAuth.  If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import unicode_literals
+# breaks distutils in python2.7!
+#from __future__ import unicode_literals
 
 import os
 import re
