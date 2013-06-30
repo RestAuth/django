@@ -19,6 +19,7 @@ Installation
 ____________
 
 .. toctree::
+   :maxdepth: 1
 
    install/source
 
