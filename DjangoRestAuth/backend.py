@@ -45,15 +45,23 @@ class RestAuthBackend(object):
             return None
 
         if verified:
+            to_save = False  # track if we need to save a user
+            kwargs = {
+                conf.USERNAME_FIELD: username,
+            }
+
             try:
-                user = User.objects.get(**{conf.USERNAME_FIELD: username})
+                user = User.objects.get(**kwargs)
             except User.DoesNotExist:
-                kwargs = {}
+                user = User(**kwargs)
+                to_save = True
 
-                if conf.RESTAUTH_PASSWORD_FIELD:
-                    kwargs[conf.RESTAUTH_PASSWORD_FIELD] = password
+            if conf.RESTAUTH_LOCAL_PASSWORDS:
+                user.set_password(password)
+                to_save = True
 
-                user = User.objects.create_user(username, **kwargs)
+            if to_save:  # save password
+                user.save()
 
             return user
 

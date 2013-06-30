@@ -26,4 +26,4 @@ User = get_user_model()
 USERNAME_FIELD = username_field = getattr(User, 'USERNAME_FIELD', 'username')
 
 # Some RestAuth settings
-RESTAUTH_PASSWORD_FIELD = getattr(settings, 'RESTAUTH_PASSWORD_FIELD', '')
+RESTAUTH_LOCAL_PASSWORD = getattr(settings, 'RESTAUTH_LOCAL_PASSWORD', False)

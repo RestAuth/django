@@ -44,27 +44,21 @@ Available keys:
 
 .. _settings-restauth_password_field:
 
-RESTAUTH_PASSWORD_FIELD
+RESTAUTH_LOCAL_PASSWORD
 _______________________
 
 Default::
 
-   ''
+   False
 
-By default, Django will not store password hashes in its local database. This
-has the advantage that no password hashes can be stolen from you if your site is
-compromised (Unless, of course, your RestAuth server is also compromised). The
-downside is that users will be unable to log in if your RestAuth server is
-unavailable for some reason.
+If set to ``True``, passwords will be stored in your local database.
 
-If you set this value to a non-empty string, DjangoRestAuth will pass the
-password to :py:meth:`create_user
-<Django:django.contrib.auth.models.CustomUserManager.create_user>`, the name of
-the keyword argument will be the value of ``RESTAUTH_PASSWORD_FIELD``.
+By default, pssword are not stored in your local database, meaning that no
+password hashes can be stolen from you if your site is compromised (Unless, of
+course, your RestAuth server is also compromised). The downside is that users
+will be unable to log in if your RestAuth server is unavailable for some reason.
 
-The correct value of this setting depends on your user model. If you haven't
-customized your model or inherit from :py:class:`AbstractBaseUser
-<Django:django.contrib.auth.models.AbstractBaseUser>`, the correct value is
-``password``. Please read the documentation on `customizing authentication
-<https://docs.djangoproject.com/en/dev/topics/auth/customizing/>`_ for further
-information.
+If you set this value to ``True``, DjangoRestAuth will set the password via
+:py:meth:`set_password
+<Django:django.contrib.auth.models.AbstractBaseUser.set_password>` whenever a
+user logs in.
