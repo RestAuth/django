@@ -28,29 +28,18 @@ Configure your RestAuth connection. This setting is mandatory!
 
 Available keys:
 
-HOST
-++++
-
-The host of the RestAuth server.
-
-USER
-++++
-
-The username to use in service authentication.
-
-PASSWORD
-++++++++
-
-The password to use in service authentication.
-
-CONTENT_HANDLER
-+++++++++++++++
-
-Optional, if your RestAuth server does not support the default JSON content
-handler. Might be a mime-type defined in :py:data:`CONTENT_HANDLERS
-<RestAuthCommon:RestAuthCommon.handlers.CONTENT_HANDLERS>` or an instance of an
-implementatation of :py:class:`ContentHandler
-<RestAuthCommon:RestAuthCommon.handlers.ContentHandler>`.
+**HOST**
+   The host of the RestAuth server.
+**USER**
+   The username to use in service authentication.
+**PASSWORD**
+   The password to use in service authentication.
+**CONTENT_HANDLER**
+   Optional, if your RestAuth server does not support the default JSON content
+   handler. Might be a mime-type defined in :py:data:`CONTENT_HANDLERS
+   <RestAuthCommon:RestAuthCommon.handlers.CONTENT_HANDLERS>` or an instance of
+   an implementatation of :py:class:`ContentHandler
+   <RestAuthCommon:RestAuthCommon.handlers.ContentHandler>`.
 
 
 .. _settings-restauth_password_field:
